@@ -22,7 +22,7 @@ A página é totalmente responsiva, com um layout moderno e simples, projetada p
 - **HTML5**
 - **CSS3**
 - **JavaScript**
-- **GitHub Pages** (opcional, se você estiver publicando o projeto)
+- **GitHub Pages** 
 
 ## Como contribuir
 Fique à vontade para fazer um fork deste repositório, abrir issues ou contribuir com melhorias e novas funcionalidades.
