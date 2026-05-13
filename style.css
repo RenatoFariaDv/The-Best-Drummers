@@ -7,136 +7,315 @@
 
 body {
   min-height: 100vh;
-  background: linear-gradient(135deg, #0f172a, #1e293b);
+  background:
+    radial-gradient(circle at top left, rgba(250, 204, 21, 0.08), transparent 25%),
+    radial-gradient(circle at bottom right, rgba(56, 189, 248, 0.08), transparent 25%),
+    linear-gradient(135deg, #0f172a, #1e293b);
+
   color: #f8fafc;
   overflow-x: hidden;
+
+  display: flex;
+  flex-direction: column;
 }
 
 header {
   text-align: center;
-  padding: 56px 20px 32px;
+  padding: 60px 20px 32px;
 }
 
 header h1 {
-  font-size: clamp(2rem, 6vw, 4.5rem);
+  font-size: clamp(2.2rem, 6vw, 5rem);
   line-height: 1.1;
   color: #facc15;
   margin-bottom: 14px;
+  font-weight: 800;
 }
 
 header p {
   max-width: 700px;
   margin: 0 auto;
-  font-size: clamp(0.95rem, 2vw, 1.15rem);
+  font-size: clamp(1rem, 2vw, 1.15rem);
   color: #cbd5e1;
+  line-height: 1.6;
 }
 
 main {
   width: min(92%, 1200px);
   margin: 0 auto;
+  flex: 1;
 }
+
+/* HERO SECTION */
+
+.how-it-works {
+  position: relative;
+  max-width: 1050px;
+  margin: 0 auto 40px;
+  padding: 36px;
+  text-align: center;
+  border-radius: 30px;
+  overflow: hidden;
+
+  background:
+    radial-gradient(circle at top left, rgba(250, 204, 21, 0.25), transparent 34%),
+    radial-gradient(circle at bottom right, rgba(56, 189, 248, 0.22), transparent 32%),
+    rgba(255, 255, 255, 0.06);
+
+  border: 1px solid rgba(255, 255, 255, 0.14);
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(10px);
+}
+
+.section-badge {
+  display: inline-block;
+  margin-bottom: 18px;
+  padding: 10px 16px;
+  border-radius: 999px;
+
+  background: rgba(250, 204, 21, 0.14);
+
+  color: #facc15;
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 0.6px;
+}
+
+.how-it-works h2 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: #ffffff;
+  line-height: 1.1;
+  margin-bottom: 16px;
+  font-weight: 800;
+}
+
+.how-it-works > p {
+  max-width: 720px;
+  margin: 0 auto;
+  color: #cbd5e1;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 32px;
+}
+
+.step-card {
+  padding: 24px;
+  border-radius: 24px;
+
+  background: rgba(15, 23, 42, 0.72);
+
+  border: 1px solid rgba(250, 204, 21, 0.15);
+
+  transition: 0.3s ease;
+
+  text-align: left;
+}
+
+.step-card:hover {
+  transform: translateY(-8px);
+  border-color: #facc15;
+
+  box-shadow: 0 12px 30px rgba(250, 204, 21, 0.12);
+}
+
+.step-card span {
+  display: inline-flex;
+  width: 46px;
+  height: 46px;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 16px;
+
+  border-radius: 14px;
+
+  background: #facc15;
+
+  color: #0f172a;
+
+  font-weight: 900;
+}
+
+.step-card h3 {
+  color: #f8fafc;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.step-card p {
+  color: #94a3b8;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+/* SEARCH */
 
 .search-box {
   display: flex;
   justify-content: center;
-  gap: 12px;
-  margin: 28px auto 42px;
+  gap: 14px;
+  margin: 30px auto 46px;
 }
 
 .search-box input {
-  width: min(100%, 520px);
-  padding: 15px 18px;
-  border-radius: 14px;
+  width: min(100%, 540px);
+
+  padding: 16px 18px;
+
+  border-radius: 16px;
   border: none;
   outline: none;
-  font-size: 1rem;
-  background: #f8fafc;
+
+  background: rgba(255, 255, 255, 0.92);
+
   color: #0f172a;
+
+  font-size: 1rem;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
 }
 
 .search-box button {
-  padding: 15px 28px;
+  padding: 16px 30px;
+
   border: none;
-  border-radius: 14px;
-  background: #facc15;
+  border-radius: 16px;
+
+  background: linear-gradient(135deg, #facc15, #eab308);
+
   color: #0f172a;
-  font-weight: 700;
+
+  font-weight: 800;
   font-size: 1rem;
+
   cursor: pointer;
+
   transition: 0.3s;
 }
 
 .search-box button:hover {
-  background: #eab308;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+
+  box-shadow: 0 10px 25px rgba(250, 204, 21, 0.3);
 }
+
+/* RESULTS */
 
 .resultados-pesquisa {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+
   gap: 22px;
+
   margin-bottom: 60px;
 }
 
 .item-resultado {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 20px;
   padding: 24px;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
-  transition: 0.3s;
+
+  border-radius: 24px;
+
+  background: rgba(255, 255, 255, 0.06);
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  backdrop-filter: blur(8px);
+
+  transition: 0.3s ease;
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
 }
 
 .item-resultado:hover {
-  transform: translateY(-6px);
-  border-color: #facc15;
+  transform: translateY(-8px);
+
+  border-color: rgba(250, 204, 21, 0.5);
 }
 
 .item-resultado h2 {
   color: #facc15;
-  font-size: 1.6rem;
   margin-bottom: 14px;
+  font-size: 1.5rem;
 }
 
 .item-resultado p {
   color: #e2e8f0;
-  line-height: 1.6;
+  line-height: 1.7;
   margin-bottom: 10px;
-  font-size: 1rem;
 }
 
 .item-resultado a {
   display: inline-block;
-  margin-top: 12px;
+
+  margin-top: 14px;
+  margin-right: 10px;
+
   padding: 11px 16px;
+
   border-radius: 12px;
-  background: #facc15;
+
+  background: linear-gradient(135deg, #facc15, #eab308);
+
   color: #0f172a;
+
   text-decoration: none;
+
   font-weight: 700;
+
   transition: 0.3s;
 }
 
 .item-resultado a:hover {
-  background: #eab308;
+  transform: scale(1.04);
 }
+
+/* FOOTER */
 
 footer {
   text-align: center;
-  padding: 24px 16px;
+
+  padding: 28px 18px;
+
   background: rgba(15, 23, 42, 0.95);
+
   color: #94a3b8;
-  font-size: 0.9rem;
+
+  font-size: 0.92rem;
+
+  line-height: 1.7;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 /* TABLET */
+
 @media (max-width: 1024px) {
+  .steps {
+    grid-template-columns: 1fr;
+  }
+
   .resultados-pesquisa {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .step-card {
+    text-align: center;
+  }
 }
 
-/* CELULAR */
+/* MOBILE */
+
 @media (max-width: 640px) {
   header {
     padding: 42px 16px 24px;
@@ -147,9 +326,13 @@ footer {
     padding: 0 16px;
   }
 
+  .how-it-works {
+    padding: 28px 20px;
+    border-radius: 24px;
+  }
+
   .search-box {
     flex-direction: column;
-    margin: 22px auto 32px;
   }
 
   .search-box input,
@@ -168,11 +351,11 @@ footer {
 
   .item-resultado h2 {
     text-align: center;
-    font-size: 1.5rem;
   }
 
   .item-resultado a {
     width: 100%;
     text-align: center;
+    margin-right: 0;
   }
 }
